@@ -1,0 +1,61 @@
+---
+title: "Untitled"
+author: "stella"
+date: "26 June 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+# to add a picture/image
+![figlegend](name of pic but must be in same folder as that which working on)
+
+#to add plot of normal distribution of 1000 samples
+foo <- rnorm(1000)
+
+# to add histaogram
+![](hist.png)
+
+# to add a website
+[name of link](insert weblink i.e. http....)
+
+# NB all coding happens in the chunk! I.e need to insert ```{r} and write codes then end chunk ```{r} . 
+# To add n image or weside, to change heading size etc, all do outside of chunks - to do this size 1 header = #Header, size 2 = ##Header, etc..until Header size 6 (start all headers with #, but ouside of chunk)
+
+#can also write normally under the header in: _italics_ or **bold** etc 
+
+# then can add new chunk: ```{r newchunk}
+plot (foo, col = 'blue')
+point(bar, col = 'green')
+boxplot (foo)
+
+baz <- data,frame(data = foo, 
+                  name = (rep(c('A', 'B'), 500)),
+                  size = rbinom(1000, size = 1, prob = 0.5))
+
+# to just print some just wrire name- e.g. to pint foo, just type foo on a seperate line.
+boxplot(baz$size ~ baz$name)
+
